@@ -22,13 +22,14 @@ export default () => {
       <form onSubmit={e => {
         e.preventDefault()
         setSubmitting(true)
+        router.push(`/slip/${code}`)
       }}>
         <div className="flex shadow items-center py-2 px-3">
-          <input type="text" pattern="[0-9]{6}" className="flex-grow" placeholder="Введите номер билета"></input>
+          <input type="text" pattern="[0-9]{6}" className="flex-grow" placeholder="Введите номер билета" onChange={e => setCode(e.target.value)}></input>
           <button type="submit" disabled={isSubmitting}>{isSubmitting ? <Loader></Loader> : "→"}</button>
         </div>
       </form>
-      <p className="mt-5">Сайтик сделан <a href="https://instagram.com/gbougakov/" className="text-blue-700 underline">Жорой из 8"И"</a>, задачки из зачета</p>
+      <p className="mt-5">Сайт сделан <a href="https://instagram.com/gbougakov/" className="text-blue-700 underline">Жорой из 8"И"</a>, задачи из зачета</p>
     </div>
     
   </div>
