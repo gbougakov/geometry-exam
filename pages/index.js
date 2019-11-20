@@ -3,6 +3,7 @@ import Button from '../components/button'
 import '../styles/index.css'
 import Loader from '../components/loader'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 export default () => {
   const router = useRouter()
@@ -10,6 +11,10 @@ export default () => {
   const [isSubmitting, setSubmitting] = useState(false)
   const [code, setCode] = useState(false)
   return <div className="min-h-screen p-10 flex justify-center items-center">
+    <Head>
+      <title>Геометрия</title>
+      <meta name="description" content="Сайт для подготовки к зачету"/>
+    </Head>
     <div className="flex flex-col w-full md:w-1/4 text-center justify-center">
       <Button isLoading={isLoading} onClick={() => {
         setLoading(true)
